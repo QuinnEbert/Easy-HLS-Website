@@ -3,10 +3,6 @@ adduser
 alsa-topology-conf
 alsa-ucm-conf
 amd64-microcode
-apache2-bin
-apache2-data
-apache2-utils
-apache2
 apparmor
 apport-symptoms
 apport
@@ -185,7 +181,6 @@ libalgorithm-diff-perl
 libalgorithm-diff-xs-perl
 libalgorithm-merge-perl
 libaom0
-libapache2-mod-php7.4
 libapparmor1
 libappstream4
 libapr1
