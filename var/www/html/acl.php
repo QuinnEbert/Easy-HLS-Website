@@ -5,7 +5,7 @@ if (count(explode('_',$s))===2) {
   $p = explode('_',$s);
   $a = $p[0]; $b = $p[1];
   if (strlen($a)&&strlen($b)) {
-    if ($a=='quinn'&$b=='foobar') {
+    if ($a=='testuser'&$b=='testkey') {
       $code=200;
     }
   }
