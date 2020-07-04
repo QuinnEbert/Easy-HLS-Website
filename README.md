@@ -3,6 +3,7 @@
 
 # Getting Started
  **WARNING WARNING WARNING** *do NOT run these steps on a server used for anything else!*
+ 
  The fastest way to get started is:
  1. Build out a fresh Ubuntu 20.04 machine or VM (ideally a VM)
  2. Do all the other steps as the root user (NOT `sudo`!)
