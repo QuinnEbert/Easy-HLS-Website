@@ -5,7 +5,8 @@ $ip_address = trim(`ip address | grep inet | grep brd | cut -d' ' -f6 | cut -d'/
 
 $files_to_modify = array(
   '/etc/nginx/sites-available/streamer.conf',
-  '/etc/nginx/nginx.conf'
+  '/etc/nginx/nginx.conf',
+  '/var/www/html/index.html'
 );
 
 foreach ($files_to_modify as $filename) {
