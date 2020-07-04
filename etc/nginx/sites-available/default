@@ -1,0 +1,55 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    # listen 443 ssl http2 default_server;
+    # listen [::]:443 ssl default_server;
+    # include snippets/snakeoil.conf;
+    keepalive_timeout 70;
+    gzip off;
+ 
+    root /var/www/html;
+ 
+    # Add index.php to the list if you are using PHP
+    index index.php index.html index.htm;
+ 
+    server_name _;
+ 
+    # add_header Strict-Transport-Security "max-age=63072000;";
+    # add_header X-Frame-Options "DENY";
+ 
+    location / {
+        location ~* \.m3u8$ {
+        add_header Cache-Control no-cache;
+        }
+        add_header Access-Control-Allow-Origin *;
+ 
+        # First attempt to serve request as file, then as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ =404;
+    }
+ 
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+    #   # With php-fpm (or other unix sockets):
+        fastcgi_pass unix:/var/run/php/php-fpm.sock;
+    #   # With php-cgi (or other tcp sockets):
+    #   fastcgi_pass 127.0.0.1:9000;
+    }
+ 
+    ## deny access to .htaccess files, if Apache's document root concurs with nginx's one
+    #location ~ /\.ht {
+    #   deny all;
+    #}
+ 
+## This provides RTMP statistics in XML at http://domain.net/stat
+location /stat {
+    rtmp_stat all;
+    rtmp_stat_stylesheet stat.xsl;
+    # auth_basic "Restricted Content";
+        # auth_basic_user_file /etc/nginx/.htpasswd;
+    }
+ 
+## XML stylesheet to view RTMP stats. Copy stat.xsl wherever you want and put the full directory path here
+location /stat.xsl {
+    root /var/www/html/;
+    }
+}

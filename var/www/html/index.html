@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src='http://192.168.1.54/videojs/video.js'></script>
+<script src="videojs/video.js"></script>
+<meta charset=utf-8 />
+<title>LiveStream</title>
+<link href="videojs/video-js.min.css" rel="stylesheet">
+<!-- <link href="videojs/videojs-sublime-skin.min.css" rel="stylesheet"> -->
+<!-- <link href="videojs/videojs-sublime-skin.css" rel="stylesheet"> -->
+<!-- <link href="videojs/video-js.css" rel="stylesheet"> -->
+<!-- <link href="videojs/videojs-skin-twitchy.css" rel="stylesheet" type="text/css">  -->
+</head>
+<body id="wholelot">
+<center>
+ 
+<video-js id="live_stream" class="video-js vjs-fluid vjs-default-skin vjs-big-play-centered" controls preload="auto" autoplay="true" width="auto" height="auto">
+ 
+<source src="live/stream/index.m3u8" type="application/x-mpegURL">
+ 
+    <p class='vjs-no-js'>
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+    </p>
+</video-js>
+ 
+  <script>
+    var player = videojs('live_stream');
+    setInterval(function(){
+      console.dir(player.readyState());
+      if (player.readyState()===2||player.readyState()===0) {
+        document.getElementById('wholelot').innerHTML = 'Media failure, reloading in 5 seconds...';
+        setTimeout(function(){location.reload();},5000);
+      }
+    },1000);
+    player.play();
+	    
+  </script>
+ 
+</center>
+</body>
+</html>
