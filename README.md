@@ -2,7 +2,7 @@
  Super easy to setup, super reliable, low latency HLS with NGINX RTMP
 
 # Known Issues
- **The Getting Started guide won't work at the moment because the FS overlay currently has a hardcoded local IP in it and the `acl.php` currently doesn't have the right default stream key in it, this stuff should only take you about 2 minutes to fix with some grep magic looking for `192.168.1.54` in `/etc/nginx` and `quinn` in `/var/www/html/acl.php`**
+ **The Getting Started guide won't work perfectly at the moment because the `acl.php` currently doesn't have the right default stream key in it, this stuff should only take you about 1 minutes to fix with some grep magic looking for `quinn` in `/var/www/html/acl.php`**
 
 # Getting Started
  The fastest way to get started is:

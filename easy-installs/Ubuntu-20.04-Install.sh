@@ -5,7 +5,7 @@ if (( $EUID != 0 )); then
 fi
 dpkg --clear-selections
 dpkg --set-selections < Ubuntu-20.04-dpkg_selections.txt
-
+chmod +x Ubuntu-20.04-InstallHelper.php
 apt-get -y autoremove &> /dev/null
 apt-get -y dselect-upgrade &> /dev/null
 mv Ubuntu-20.04-fs_overlay.tar.bz2 /
@@ -15,4 +15,6 @@ tar -xjf Ubuntu-20.04-fs_overlay.tar.bz2
 systemctl enable nginx &> /dev/null
 systemctl restart nginx &> /dev/null
 mv /Ubuntu-20.04-fs_overlay.tar.bz2 "$MOVEBACKTO"
+cd "$MOVEBACKTO"
+./Ubuntu-20.04-InstallHelper.php
 echo 'Install completed, check the README for next steps'
