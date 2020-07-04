@@ -1,9 +1,6 @@
 # Easy-HLS-Website
  Super easy to setup, super reliable, low latency HLS with NGINX RTMP
 
-# Big Issues
- `ffmpeg` isn't yet currently bundled in the 20.04 tarballs.  I'll fix that ASAP.
-
 # Getting Started
  The fastest way to get started is:
  1. Build out a fresh Ubuntu 20.04 machine or VM (ideally a VM)
