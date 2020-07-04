@@ -7,9 +7,10 @@
  2. Do all the other steps as the root user (NOT `sudo`!)
  3. Check out the repo in `root`'s home directory
  4. `cd /root/Easy-HLS-Website/easy-installs`
- 5. `./Ubuntu-20.04-Install.sh`
- 6. Point OBS to `rtmp://the-server-ip-address:1935/live` and set the stream key to `testuser_testkey`
- 7. Point your desktop or iOS web browser to `http://the-server-ip-address/` and profit
+ 5. `chmod +x ./Ubuntu-20.04-Install.sh`
+ 6. `./Ubuntu-20.04-Install.sh`
+ 7. Point OBS to `rtmp://the-server-ip-address:1935/live` and set the stream key to `testuser_testkey`
+ 8. Point your desktop or iOS web browser to `http://the-server-ip-address/` and profit
 
 # Big Pitfalls
  I have not automated the build of the Ubuntu 20.04 FS overlay tarball yet so it may be out of date sometimes versus what's on the repo.
